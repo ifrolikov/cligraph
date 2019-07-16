@@ -1,0 +1,19 @@
+{
+  "name": "frolikov/cligraph",
+  "description": "draw graphic elements in terminal",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "frolikov",
+      "email": "frolikov@tutu.ru"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "CliGraph\\": "./"
+    }
+  }
+}
