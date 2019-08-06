@@ -38,7 +38,6 @@ class Drawer
     
     public function getBarWithPercent(float $percent): string
     {
-        $realPercent = round($percent / $this->fullLineSize, 2);
         $filledItems = round($percent / 100 * $this->fullLineSize);
         $unfilledItems = $this->fullLineSize - $filledItems;
         $result = "";
@@ -52,6 +51,6 @@ class Drawer
                 $result .= self::UNFILLED_ITEM;
             }
         }
-        return $result."  ~{$realPercent}%";
+        return $result."  ~{$percent}%";
     }
 }
