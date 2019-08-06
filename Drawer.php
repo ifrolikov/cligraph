@@ -35,4 +35,22 @@ class Drawer
         }
         return $result;
     }
+    
+    public function getBarWithPercent(float $percent): string
+    {
+        $filledItems = round($percent / 100 * $this->fullLineSize);
+        $unfilledItems = $this->fullLineSize - $filledItems;
+        $result = "";
+        if (!empty($filledItems)) {
+            foreach (range(0, $filledItems-1) as $counter) {
+                $result .= self::FILLED_ITEM;
+            }
+        }
+        if (!empty($unfilledItems)) {
+            foreach (range(0, $unfilledItems-1) as $counter) {
+                $result .= self::UNFILLED_ITEM;
+            }
+        }
+        return $result."  {$percent}%";
+    }
 }
